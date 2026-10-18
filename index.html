@@ -13,6 +13,19 @@
 
 <body>
 
+    <!-- Décorations Halloween -->
+    <div id="halloween-decor" aria-hidden="true">
+        <span class="halloween-pumpkin pumpkin-one">🎃</span>
+        <span class="halloween-pumpkin pumpkin-two">🎃</span>
+        <span class="halloween-bat bat-one">🦇</span>
+        <span class="halloween-bat bat-two">🦇</span>
+        <span class="halloween-bat bat-three">🦇</span>
+        <span class="halloween-ghost ghost-one">👻</span>
+        <span class="halloween-spark spark-one">✦</span>
+        <span class="halloween-spark spark-two">✧</span>
+    </div>
+
+
     <!-- EN-TÊTE -->
     <header class="header">
         <a class="brand" href="#accueil">
@@ -45,7 +58,21 @@
                     <option value="violet">🟣 Violet</option>
                 </select>
             </label>
+
+
+            <button class="special-themes-menu-item" id="special-themes-toggle" type="button" aria-expanded="false"
+                aria-controls="special-themes-submenu">
+                Thèmes spéciaux <span>▾</span>
+            </button>
+
+            <div id="special-themes-submenu" hidden>
+                <button type="button" class="special-theme-link" id="halloween-menu-link">
+                    🎃 #1 Halloween
+                </button>
+            </div>
+
         </nav>
+
     </header>
 
     <main>
@@ -111,6 +138,35 @@
                 </article>
 
             </div>
+        </section>
+
+        <section class="special-themes" id="themes-speciaux">
+            <div class="special-header">
+                <span class="special-badge">ÉDITION LIMITÉE</span>
+                <h2>🎃 Thèmes spéciaux</h2>
+                <p>Débloque des thèmes exclusifs au fil des événements !</p>
+            </div>
+
+            <article class="theme-card halloween-card">
+                <div class="theme-icon">🎃</div>
+
+                <div class="theme-info">
+                    <span class="theme-label">ÉDITION HALLOWEEN 2026</span>
+                    <h3>Halloween</h3>
+                    <p>
+                        Une ambiance sombre, des couleurs orange et violettes
+                        et quelques surprises pour les vacances !
+                    </p>
+                </div>
+
+                <button id="claim-halloween" class="theme-button">
+                    🎁 Réclamer ma récompense
+                </button>
+
+                <p id="halloween-status" class="theme-status" aria-live="polite">
+                    🔒 Thème verrouillé
+                </p>
+            </article>
         </section>
 
         <!-- À PROPOS -->
@@ -716,6 +772,101 @@
             applyTheme("bleu");
         }
     </script>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // Récompense et thème Halloween
+    const button = document.getElementById("claim-halloween");
+    const status = document.getElementById("halloween-status");
+
+    const unlockKey = "halloweenUnlocked";
+    const themeKey = "halloweenThemeActive";
+
+    // Menu des thèmes spéciaux
+    const specialToggle = document.getElementById("special-themes-toggle");
+    const specialSubmenu = document.getElementById("special-themes-submenu");
+    const halloweenLink = document.getElementById("halloween-menu-link");
+
+    // Ouvrir ou fermer le sous-menu
+    if (specialToggle && specialSubmenu) {
+        specialToggle.addEventListener("click", function () {
+            const isOpening = specialSubmenu.hidden;
+
+            specialSubmenu.hidden = !isOpening;
+            specialToggle.setAttribute("aria-expanded", String(isOpening));
+        });
+    }
+
+    // Aller à la section Halloween depuis le sous-menu
+    if (halloweenLink) {
+        halloweenLink.addEventListener("click", function () {
+            const halloweenSection = document.getElementById("themes-speciaux");
+
+            if (halloweenSection) {
+                halloweenSection.scrollIntoView({ behavior: "smooth" });
+            }
+        });
+    }
+
+    // Vérifier que les éléments de la récompense existent
+    if (!button || !status) {
+        console.error("Bouton ou statut Halloween introuvable !");
+        return;
+    }
+
+    let active = localStorage.getItem(themeKey) === "true";
+
+    // Ne pas activer le thème si la récompense n'est pas débloquée
+    if (localStorage.getItem(unlockKey) !== "true") {
+        active = false;
+        localStorage.removeItem(themeKey);
+    }
+
+    // Mettre à jour le bouton et le statut
+    function updateButton() {
+        const unlocked = localStorage.getItem(unlockKey) === "true";
+
+        document.body.classList.toggle(
+            "halloween-theme",
+            unlocked && active
+        );
+
+        if (!unlocked) {
+            button.textContent = "🎁 Réclamer ma récompense";
+            status.textContent = "🔒 Thème verrouillé";
+        } else {
+            button.textContent = active
+                ? "☀️ Désactiver le thème Halloween"
+                : "🎃 Activer le thème Halloween";
+
+            status.textContent = active
+                ? "🎃 Thème Halloween activé !"
+                : "🔓 Récompense récupérée !";
+        }
+    }
+
+    // Réclamer la récompense ou activer/désactiver le thème
+    button.addEventListener("click", function () {
+        const unlocked = localStorage.getItem(unlockKey) === "true";
+
+        if (!unlocked) {
+            localStorage.setItem(unlockKey, "true");
+            active = false;
+        } else {
+            active = !active;
+        }
+
+        localStorage.setItem(themeKey, String(active));
+        updateButton();
+    });
+
+    // Initialiser l'affichage
+    updateButton();
+});
+</script>
+
 
 </body>
 
