@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Troll Info </title>
+    <meta name="theme-color" content="#020306">
+    <meta name="description"
+        content="Découvrez les projets, les compétences et les expériences de Troll Info dans la gestion de communautés, la modération et le développement.">
+    <title>Troll Info</title>
     <link rel="stylesheet" href="troll info.css">
 </head>
 
@@ -17,13 +20,14 @@
             <span>Troll Info</span>
         </a>
 
-        <button class="menu-button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navigation">
+        <button class="menu-button" type="button" aria-label="Ouvrir le menu" aria-expanded="false"
+            aria-controls="navigation">
             <span></span>
             <span></span>
             <span></span>
         </button>
 
-        <nav class="navigation" id="navigation">
+        <nav class="navigation" id="navigation" aria-label="Navigation principale">
             <a href="#accueil">Accueil</a>
             <a href="#apropos">À propos</a>
             <a href="#competences">Compétences</a>
@@ -31,6 +35,16 @@
             <a href="#experience">Mon expérience</a>
             <a href="#reseaux">Mes réseaux</a>
             <a href="#contact">Me contacter</a>
+
+            <label class="theme-picker">
+                <span>Thème</span>
+                <select id="theme-select" aria-label="Choisir un thème">
+                    <option value="bleu">🔵 Bleu</option>
+                    <option value="rose">🩷 Rose</option>
+                    <option value="vert">🟢 Vert</option>
+                    <option value="violet">🟣 Violet</option>
+                </select>
+            </label>
         </nav>
     </header>
 
@@ -45,8 +59,9 @@
                     <h1>Troll Info</h1>
 
                     <p class="home-text">
-                        Retrouvez mes projets, mes plateformes et mes activités autour du multi gaming, de la création
-                        de contenu et de la gestion de communautés.
+                        Retrouvez mes projets, mes plateformes et mes activités
+                        autour du multigaming, de la création de contenu,
+                        du développement et de la gestion de communautés.
                     </p>
 
                     <a class="primary-button" href="#projets">
@@ -59,6 +74,7 @@
                 <article class="profile-card">
                     <div class="profile-top">
                         <img src="logo.png" alt="Logo Troll Info">
+
                         <div>
                             <h2>Troll Info</h2>
                             <p>Communauté &amp; Projets</p>
@@ -69,16 +85,20 @@
 
                     <div class="profile-section">
                         <h3>EXPERTISE</h3>
+
                         <div class="expertise-list">
                             <span>Administration</span>
                             <span>Modération</span>
-                            <span>Gestion Staff</span>
+                            <span>Gestion du staff</span>
                             <span>Organisation</span>
-                            <span>Partenariat</span>
-                            <span>Communauté</span>
-                            <span>Middle Man</span>
-                            <span>Développeur</span>
-                            <span>Content Creator</span>
+                            <span>Partenariats</span>
+                            <span>Communautés</span>
+                            <span>Middleman</span>
+                            <span>Création de contenu</span>
+                            <span>Développement</span>
+                            <span>Testeur</span>
+                            <span>Builder</span>
+                            <span>Designer</span>
                         </div>
                     </div>
 
@@ -98,6 +118,7 @@
             <div class="section-heading">
                 <p class="eyebrow">QUI SUIS-JE ?</p>
                 <h2>À propos de moi</h2>
+
                 <p>
                     Découvrez mon univers, mes activités et les domaines
                     dans lesquels je m'investis.
@@ -106,13 +127,16 @@
 
             <div class="about-card">
                 <div class="about-icon">TI</div>
+
                 <div>
                     <h3>Un univers, plusieurs projets</h3>
+
                     <p>
                         Je développe mon activité autour de différents projets
                         et communautés. Entre administration, modération,
-                        développement et création de contenu, cette page
-                        évoluera avec mon parcours.
+                        développement et création de contenu, je cherche
+                        constamment à progresser et à participer à de nouveaux
+                        projets. Cette page évoluera au fil de mon parcours.
                     </p>
                 </div>
             </div>
@@ -123,45 +147,67 @@
             <div class="section-heading">
                 <p class="eyebrow">MON SAVOIR-FAIRE</p>
                 <h2>Mes compétences</h2>
-                <p>Les différents domaines dans lesquels je m'investis.</p>
+
+                <p>
+                    Les différents domaines dans lesquels je m'investis.
+                </p>
             </div>
 
             <div class="skills-grid">
+
                 <article class="skill-card">
                     <span class="skill-number">01</span>
                     <h3>Administration</h3>
-                    <p>Organisation, gestion et suivi des communautés et de leurs besoins.</p>
+                    <p>
+                        Organisation, gestion et suivi des communautés
+                        et de leurs besoins.
+                    </p>
                 </article>
 
                 <article class="skill-card">
                     <span class="skill-number">02</span>
                     <h3>Modération</h3>
-                    <p>Application des règles et participation à un environnement organisé.</p>
+                    <p>
+                        Application des règles, gestion des conflits
+                        et maintien d'un environnement organisé.
+                    </p>
                 </article>
 
                 <article class="skill-card">
                     <span class="skill-number">03</span>
                     <h3>Gestion d'équipe</h3>
-                    <p>Organisation du staff, coordination et suivi des responsabilités.</p>
+                    <p>
+                        Organisation du staff, coordination et suivi
+                        des responsabilités.
+                    </p>
                 </article>
 
                 <article class="skill-card">
                     <span class="skill-number">04</span>
                     <h3>Développement</h3>
-                    <p>Création et amélioration de projets numériques.</p>
+                    <p>
+                        Création et amélioration de projets numériques.
+                    </p>
                 </article>
 
                 <article class="skill-card">
                     <span class="skill-number">05</span>
                     <h3>Création de contenu</h3>
-                    <p>Création de contenu et développement de projets autour de mes plateformes.</p>
+                    <p>
+                        Création de contenu et développement de projets
+                        autour de mes plateformes.
+                    </p>
                 </article>
 
                 <article class="skill-card">
                     <span class="skill-number">06</span>
                     <h3>Gestion de communauté</h3>
-                    <p>Animation, organisation et développement de communautés en ligne.</p>
+                    <p>
+                        Animation, organisation et développement
+                        de communautés en ligne.
+                    </p>
                 </article>
+
             </div>
         </section>
 
@@ -170,57 +216,286 @@
             <div class="section-heading">
                 <p class="eyebrow">MES RÉALISATIONS</p>
                 <h2>Mes projets</h2>
-                <p>Retrouvez ici mes projets Roblox, Discord, vidéo et autres créations.</p>
+
+                <p>
+                    Retrouvez ici mes projets Roblox, Discord,
+                    vidéo et autres créations.
+                </p>
             </div>
 
             <div class="projects-grid">
+
                 <article class="project-card">
                     <span class="project-tag">ROBLOX</span>
                     <h3>Projets Roblox</h3>
-                    <p>Présentation de mes jeux, serveurs et projets liés à l'univers Roblox.</p>
-                    <span class="project-status">À compléter</span>
+
+                    <p>
+                        Mon objectif est de créer et de sortir mon propre jeu Roblox.
+                        Je souhaite également participer à différents projets
+                        et développer mes compétences en tant que développeur, testeur, designer et builder dans cet
+                        univers.
+                    </p>
+
+
                 </article>
 
                 <article class="project-card">
                     <span class="project-tag">DISCORD</span>
                     <h3>Serveurs Discord</h3>
-                    <p>Communautés, administration, modération et organisation de serveurs.</p>
-                    <span class="project-status">À compléter</span>
+
+
+
+                    <p>
+                        Mon objectif est de devenir super modérateur sur les serveurs
+                        où je suis le plus actif, de gagner en expérience et, si possible,
+                        de monter en grade au fil du temps. Je souhaite également m'investir dans
+                        les communautés, l'administration, la modération et
+                        l'organisation de serveurs.
+                    </p>
+
+
+
+
                 </article>
 
                 <article class="project-card">
                     <span class="project-tag">CONTENU</span>
                     <h3>Création de contenu</h3>
-                    <p>Vidéos, chaînes, streams et autres créations publiées sur mes plateformes.</p>
-                    <span class="project-status">À compléter</span>
+
+                    <p>
+                        Mon objectif est de devenir créateur de contenu et de développer
+                        mon univers multigaming à travers des vidéos, des chaînes,
+                        des streams et différentes créations publiées sur mes plateformes.
+                        La reprise de cette activité est prévue pour l'été 2027,
+                        avec l'envie de développer mes projets et de construire
+                        progressivement ma communauté.
+                    </p>
+
+
                 </article>
+
             </div>
         </section>
 
         <!-- EXPÉRIENCE -->
         <section class="section content-section" id="experience">
+
             <div class="section-heading">
                 <p class="eyebrow">MON PARCOURS</p>
                 <h2>Mon expérience</h2>
-                <p>Les rôles, responsabilités et expériences que je souhaite présenter.</p>
+                <p>
+                    Mes responsabilités, les communautés auxquelles
+                    je participe et les retours sur mon travail.
+                </p>
             </div>
 
-            <div class="empty-card">
-                <span class="empty-icon">✦</span>
-                <h3>Mon parcours sera bientôt présenté ici</h3>
-                <p>
-                    Nous ajouterons les serveurs, les postes occupés et les missions
-                    réalisées lorsque les informations seront prêtes.
-                </p>
+            <div class="experience-list">
+
+                <!-- ATM & GUIGUI -->
+                <article class="experience-card">
+
+                    <div class="experience-card-header">
+                        <div>
+                            <span class="project-tag">
+                                DISCORD · MODÉRATION · MIDDLEMAN
+                            </span>
+                            <h3>ATM &amp; GuiGui</h3>
+                        </div>
+
+                    </div>
+
+                    <p class="experience-description">
+                        Participation à la modération et à la gestion
+                        d'une grande communauté Discord francophone.
+                    </p>
+
+                    <div class="experience-stats">
+                        <div class="experience-stat">
+                            <span>MEMBRES EN MOYENNE</span>
+                            <strong>≈ 37 000</strong>
+                        </div>
+
+                        <div class="experience-stat">
+                            <span>RECORD ANNONCÉ</span>
+                            <strong>+ 40 000</strong>
+                        </div>
+                    </div>
+
+                    <div class="experience-role">
+                        <strong>🛡️ Mon rôle de Modérateur</strong>
+                        <p>
+                            Modération, accompagnement des membres et
+                            participation au bon fonctionnement de la communauté.
+                        </p>
+                    </div>
+                    <br>
+                    <div class="experience-role">
+                        <strong>🤝 Mon rôle de Middleman</strong>
+                        <p>
+                            Activité de middleman et accompagnement des
+                            transactions entre membres.
+                        </p>
+                    </div>
+                    <br>
+                    <div class="experience-role">
+                        <strong>🧪 Testeur de jeu <i>Ragdoll a Lucky Block</i></strong>
+                        <p>
+                            Tests du jeu d’ATM &amp; GuiGui, identification des problèmes
+                            et participation à son amélioration.
+                        </p>
+                    </div>
+
+                    <div class="experience-divider"></div>
+
+                    <div class="experience-reviews">
+                        <p class="eyebrow">TÉMOIGNAGE</p>
+                        <h4>Les retours des responsables</h4>
+
+                        <article class="review-card">
+                            <div class="review-header">
+                                <div class="review-avatar">L</div>
+
+                                <div class="review-author">
+                                    <strong>Lucas</strong>
+                                    <span>Responsable de la modération</span>
+                                </div>
+
+                                <span class="review-quote-mark">“</span>
+                            </div>
+
+                            <blockquote>
+                                Troll est un membre particulièrement
+                                complet pour les communautés françaises,
+                                il sait gérer les conflits et assurer
+                                le support à la perfection ! Toujours
+                                disponible, il parvient à s’organiser
+                                efficacement entre plusieurs projets,
+                                tout en restant très actif sur l'ensemble
+                                de ses serveurs.
+                            </blockquote>
+                        </article>
+                        <br>
+
+                        <a class="experience-button" href="https://discord.gg/wumH6u4pjp" target="_blank"
+                            rel="noopener noreferrer">
+                            Découvrir ATM &amp; GuiGui <span>↗</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- GIANNI -->
+                <article class="experience-card">
+
+                    <div class="experience-card-header">
+                        <div>
+                            <span class="project-tag">
+                                DISCORD · MODÉRATION
+                            </span>
+                            <h3>Gianni</h3>
+                        </div>
+
+                    </div>
+
+                    <p class="experience-description">
+                        Expérience de modération au sein d'une communauté
+                        Discord francophone d'environ 20 000 membres,
+                        dédiée au jeu Escape from Granny.
+                    </p>
+
+                    <div class="experience-stats">
+                        <div class="experience-stat">
+                            <span>TAILLE DE LA COMMUNAUTÉ</span>
+                            <strong>≈ 20 000 membres</strong>
+                        </div>
+                    </div>
+
+                    <div class="experience-role">
+                        <strong>🛡️ Mon rôle de Modérateur</strong>
+                        <p>
+                            Participation à la modération et à
+                            l'organisation de la communauté.
+                        </p>
+                    </div>
+
+                    <div class="experience-divider"></div>
+
+                    <div class="experience-reviews">
+                        <p class="eyebrow">TÉMOIGNAGE</p>
+                        <h4>Les retours des responsables</h4>
+
+                        <!-- AVIS DE SLYZZ POUR GIANNI -->
+                        <article class="review-card">
+                            <div class="review-header">
+                                <div class="review-avatar review-avatar-slyzz">S</div>
+
+                                <div class="review-author">
+                                    <strong>Slyzz</strong>
+                                    <span>Responsable de la modération</span>
+                                </div>
+
+                                <span class="review-quote-mark">“</span>
+                            </div>
+
+                            <blockquote>
+                                Troll est une personne remarquable,
+                                capable de jongler entre plusieurs serveurs
+                                tout en restant toujours partant. Son activité
+                                et son investissement sont des qualités qu’on
+                                ne peut clairement pas lui enlever !
+                            </blockquote>
+                        </article>
+                        <br>
+                        <!-- AVIS DE LUCAS POUR GIANNI -->
+                        <article class="review-card">
+                            <div class="review-header">
+                                <div class="review-avatar">L</div>
+
+                                <div class="review-author">
+                                    <strong>Lucas</strong>
+                                    <span>Responsable général</span>
+                                </div>
+
+                                <span class="review-quote-mark">“</span>
+                            </div>
+
+                            <blockquote>
+                                Troll est un membre particulièrement complet pour les communautés françaises, il sait
+                                gérer les conflits et assurer le support à la perfection ! Toujours disponible, il
+                                parvient à s’organiser efficacement entre plusieurs projets, tout en restant très actif
+                                sur l'ensemble de ses serveurs.
+                            </blockquote>
+                        </article>
+                    </div>
+
+                    <a class="experience-button" href="https://discord.gg/sBfaNzYph8" target="_blank"
+                        rel="noopener noreferrer">
+                        Découvrir Gianni <span>↗</span>
+                    </a>
+
+                </article>
+
+                <!-- EXPÉRIENCES À VENIR -->
+                <div class="experience-upcoming">
+                    <span class="upcoming-icon">✦</span>
+                    <h3>La suite arrive bientôt</h3>
+                    <p>
+                        D'autres expériences, responsabilités et
+                        témoignages seront ajoutés au fil de mon parcours.
+                    </p>
+                </div>
+
             </div>
         </section>
 
-        <!-- RÉSEAUX : UNE SEULE SECTION -->
+        <!-- RÉSEAUX -->
         <section class="section content-section" id="reseaux">
             <div class="section-heading">
                 <p class="eyebrow">RESTONS CONNECTÉS</p>
                 <h2>Mes réseaux</h2>
-                <p>Retrouvez mes projets et mes plateformes au même endroit.</p>
+
+                <p>
+                    Retrouvez mes projets et mes plateformes au même endroit.
+                </p>
             </div>
 
             <div class="social-grid">
@@ -228,51 +503,74 @@
                 <a class="social-card discord" href="https://discord.gg/zWqJgQaBWk" target="_blank"
                     rel="noopener noreferrer">
                     <span class="social-symbol social-icon">D</span>
+
                     <span class="social-info">
                         <strong>Discord</strong>
                         <small>Ma communauté multigaming</small>
                     </span>
+
                     <span class="social-arrow">↗</span>
                 </a>
 
                 <a class="social-card roblox" href="https://www.roblox.com/share/g/698338488" target="_blank"
                     rel="noopener noreferrer">
                     <span class="social-symbol social-icon">R</span>
+
                     <span class="social-info">
                         <strong>Roblox</strong>
                         <small>Mon groupe communautaire</small>
                     </span>
+
                     <span class="social-arrow">↗</span>
                 </a>
 
                 <a class="social-card twitch" href="https://www.twitch.tv/troll_gamingyt" target="_blank"
                     rel="noopener noreferrer">
                     <span class="social-symbol social-icon">T</span>
+
                     <span class="social-info">
                         <strong>Twitch</strong>
                         <small>Troll Gaming YT</small>
                     </span>
+
                     <span class="social-arrow">↗</span>
                 </a>
 
                 <a class="social-card tiktok" href="https://www.tiktok.com/@troll_multigaming_yt" target="_blank"
                     rel="noopener noreferrer">
                     <span class="social-symbol social-icon">♪</span>
+
                     <span class="social-info">
                         <strong>TikTok</strong>
                         <small>@troll_multigaming_yt</small>
                     </span>
+
                     <span class="social-arrow">↗</span>
                 </a>
 
                 <a class="social-card youtube" href="https://www.youtube.com/@Troll_MultiGaming" target="_blank"
                     rel="noopener noreferrer">
                     <span class="social-symbol social-icon">▶</span>
+
                     <span class="social-info">
                         <strong>YouTube</strong>
                         <small>Troll MultiGaming</small>
                         <small>Reprise officielle prévue : été 2027</small>
                     </span>
+
+                    <span class="social-arrow">↗</span>
+                </a>
+
+                <a class="social-card brawlstars"
+                    href="https://link.brawlstars.com/invite/band/fr?tag=880GG9PYR&amp;token=448xt3t7" target="_blank"
+                    rel="noopener noreferrer">
+                    <span class="social-symbol social-icon">★</span>
+
+                    <span class="social-info">
+                        <strong>Brawl Stars</strong>
+                        <small>Rejoindre mon club</small>
+                    </span>
+
                     <span class="social-arrow">↗</span>
                 </a>
 
@@ -284,9 +582,10 @@
             <div class="section-heading">
                 <p class="eyebrow">UN PROJET EN TÊTE ?</p>
                 <h2>Me contacter</h2>
+
                 <p>
                     Pour une collaboration, un projet ou une demande,
-                    retrouve mes coordonnées ici.
+                    retrouve mes coordonnées sur mes réseaux.
                 </p>
             </div>
 
@@ -309,31 +608,40 @@
                 </a>
 
                 <p>
-                    Mes projets, mes plateformes et mon univers<br>
+                    Mes projets, mes plateformes et mon univers
+                    <br>
                     réunis au même endroit.
                 </p>
-
             </div>
 
             <div class="footer-column">
                 <h3>NAVIGATION</h3>
+
                 <a href="#accueil">Accueil</a>
                 <a href="#apropos">À propos</a>
                 <a href="#competences">Compétences</a>
                 <a href="#projets">Mes projets</a>
                 <a href="#experience">Mon expérience</a>
+                <a href="#reseaux">Mes réseaux</a>
             </div>
 
             <div class="footer-column">
                 <h3>PLATEFORMES</h3>
+
                 <a href="https://discord.gg/zWqJgQaBWk" target="_blank" rel="noopener noreferrer">Discord</a>
+
                 <a href="https://www.youtube.com/@Troll_MultiGaming" target="_blank"
                     rel="noopener noreferrer">YouTube</a>
+
                 <a href="https://www.twitch.tv/troll_gamingyt" target="_blank" rel="noopener noreferrer">Twitch</a>
+
                 <a href="https://www.roblox.com/share/g/698338488" target="_blank" rel="noopener noreferrer">Roblox</a>
+
                 <a href="https://www.tiktok.com/@troll_multigaming_yt" target="_blank"
                     rel="noopener noreferrer">TikTok</a>
-                <a href="#contact">Contact</a>
+
+                <a href="https://link.brawlstars.com/invite/band/fr?tag=880GG9PYR&amp;token=448xt3t7" target="_blank"
+                    rel="noopener noreferrer">Brawl Stars</a>
             </div>
 
         </div>
@@ -344,22 +652,69 @@
         </div>
     </footer>
 
-    <!-- MENU HAMBURGER -->
     <script>
+        // MENU HAMBURGER
         const menuButton = document.querySelector(".menu-button");
         const navigation = document.querySelector(".navigation");
 
         menuButton.addEventListener("click", () => {
             const isOpen = navigation.classList.toggle("is-open");
-            menuButton.setAttribute("aria-expanded", isOpen);
+
+            menuButton.setAttribute("aria-expanded", String(isOpen));
+            menuButton.setAttribute(
+                "aria-label",
+                isOpen ? "Fermer le menu" : "Ouvrir le menu"
+            );
         });
 
+        // FERMETURE DU MENU APRÈS UN CLIC SUR UN LIEN
         navigation.querySelectorAll("a").forEach((link) => {
             link.addEventListener("click", () => {
                 navigation.classList.remove("is-open");
                 menuButton.setAttribute("aria-expanded", "false");
+                menuButton.setAttribute("aria-label", "Ouvrir le menu");
             });
         });
+
+        // FERMETURE AVEC LA TOUCHE ÉCHAP
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") {
+                navigation.classList.remove("is-open");
+                menuButton.setAttribute("aria-expanded", "false");
+                menuButton.setAttribute("aria-label", "Ouvrir le menu");
+            }
+        });
+
+        // THÈMES
+        const themeSelect = document.getElementById("theme-select");
+        const themes = ["bleu", "rose", "vert", "violet"];
+
+        function applyTheme(theme) {
+            if (!themes.includes(theme)) {
+                theme = "bleu";
+            }
+
+            document.body.dataset.theme = theme;
+            themeSelect.value = theme;
+
+            try {
+                localStorage.setItem("troll-info-theme", theme);
+            } catch (error) {
+                // Le site fonctionne aussi si le stockage est indisponible.
+            }
+        }
+
+        themeSelect.addEventListener("change", () => {
+            applyTheme(themeSelect.value);
+        });
+
+        // RESTAURATION DU DERNIER THÈME CHOISI
+        try {
+            const savedTheme = localStorage.getItem("troll-info-theme");
+            applyTheme(savedTheme || "bleu");
+        } catch (error) {
+            applyTheme("bleu");
+        }
     </script>
 
 </body>
