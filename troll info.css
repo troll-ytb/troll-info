@@ -686,7 +686,7 @@ body::after {
 
 #experience .experience-card:hover {
     z-index: 2;
-    transform: scale(1.035);
+    transform: translateY(-3px) scale(1.035);
     border-color: rgba(var(--theme-accent-rgb), 0.75);
     box-shadow: 0 16px 45px rgba(0, 0, 0, 0.3);
 }
@@ -921,13 +921,36 @@ body::after {
     line-height: 1.8;
 }
 
-/* Effet réciproque entre les deux premières cartes */
+/* Effet réciproque entre les cartes */
 @media (min-width: 701px) {
-    #experience .experience-list:has(> .experience-card:first-child:hover)>.experience-card:nth-child(2) {
+
+    /* Survol de la carte 1 : décale la carte 2 */
+    #experience .experience-list:has(> .experience-card:nth-child(1):hover)>.experience-card:nth-child(2) {
         transform: translateX(12px) scale(0.97);
     }
 
-    #experience .experience-list:has(> .experience-card:nth-child(2):hover)>.experience-card:first-child {
+    /* Survol de la carte 2 : décale la carte 1 */
+    #experience .experience-list:has(> .experience-card:nth-child(2):hover)>.experience-card:nth-child(1) {
+        transform: translateX(-12px) scale(0.97);
+    }
+
+    /* Survol de Middle Man : décale la carte 2 */
+    #experience .experience-list:has(> .experience-card:nth-child(3):hover)>.experience-card:nth-child(2) {
+        transform: translateX(-12px) scale(0.97);
+    }
+
+    /* Survol de Middle Man : décale aussi ATM & GuiGui */
+    #experience .experience-list:has(> .experience-card:nth-child(3):hover)>.experience-card:nth-child(1) {
+        transform: translateX(12px) scale(0.97);
+    }
+
+    /* Survol d'ATM & GuiGui : décale Middle Man */
+    #experience .experience-list:has(> .experience-card:nth-child(1):hover)>.experience-card:nth-child(3) {
+        transform: translateX(12px) scale(0.97);
+    }
+
+    /* Survol de Gianni : décale Middle Man */
+    #experience .experience-list:has(> .experience-card:nth-child(2):hover)>.experience-card:nth-child(3) {
         transform: translateX(-12px) scale(0.97);
     }
 }
@@ -1468,36 +1491,84 @@ body::after {
 
 /* === Zone de nage des poissons 🐟 === */
 
-.expertise-list > span {
-  display: inline-block;
-  animation: expertise-nage 4s ease-in-out infinite;
-  animation-delay: calc(var(--nage) * -0.37s);
+.expertise-list>span {
+    display: inline-block;
+    animation: expertise-nage 4s ease-in-out infinite;
+    animation-delay: calc(var(--nage) * -0.37s);
 }
 
-.expertise-list > span:nth-child(1)  { --nage: 1; }
-.expertise-list > span:nth-child(2)  { --nage: 2; }
-.expertise-list > span:nth-child(3)  { --nage: 3; }
-.expertise-list > span:nth-child(4)  { --nage: 4; }
-.expertise-list > span:nth-child(5)  { --nage: 5; }
-.expertise-list > span:nth-child(6)  { --nage: 6; }
-.expertise-list > span:nth-child(7)  { --nage: 7; }
-.expertise-list > span:nth-child(8)  { --nage: 8; }
-.expertise-list > span:nth-child(9)  { --nage: 9; }
-.expertise-list > span:nth-child(10) { --nage: 10; }
-.expertise-list > span:nth-child(11) { --nage: 11; }
-.expertise-list > span:nth-child(12) { --nage: 12; }
+.expertise-list>span:nth-child(1) {
+    --nage: 1;
+}
+
+.expertise-list>span:nth-child(2) {
+    --nage: 2;
+}
+
+.expertise-list>span:nth-child(3) {
+    --nage: 3;
+}
+
+.expertise-list>span:nth-child(4) {
+    --nage: 4;
+}
+
+.expertise-list>span:nth-child(5) {
+    --nage: 5;
+}
+
+.expertise-list>span:nth-child(6) {
+    --nage: 6;
+}
+
+.expertise-list>span:nth-child(7) {
+    --nage: 7;
+}
+
+.expertise-list>span:nth-child(8) {
+    --nage: 8;
+}
+
+.expertise-list>span:nth-child(9) {
+    --nage: 9;
+}
+
+.expertise-list>span:nth-child(10) {
+    --nage: 10;
+}
+
+.expertise-list>span:nth-child(11) {
+    --nage: 11;
+}
+
+.expertise-list>span:nth-child(12) {
+    --nage: 12;
+}
 
 @keyframes expertise-nage {
-  0%, 100% { translate: 0 0; }
-  25%      { translate: 3px -4px; }
-  50%      { translate: -2px -7px; }
-  75%      { translate: -4px -2px; }
+
+    0%,
+    100% {
+        translate: 0 0;
+    }
+
+    25% {
+        translate: 3px -4px;
+    }
+
+    50% {
+        translate: -2px -7px;
+    }
+
+    75% {
+        translate: -4px -2px;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .expertise-list > span {
-    animation: none;
-  }
+    .expertise-list>span {
+        animation: none;
+    }
 }
 
 
@@ -1880,18 +1951,24 @@ body.halloween-theme #halloween-decor {
 
 /* Animations */
 @keyframes pumpkin-float {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0) rotate(-5deg);
     }
+
     50% {
         transform: translateY(-15px) rotate(5deg);
     }
 }
 
 @keyframes bat-fly {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translate(0, 0) rotate(-8deg);
     }
+
     50% {
         transform: translate(18px, -12px) rotate(8deg);
     }
@@ -1902,6 +1979,7 @@ body.halloween-theme #halloween-decor {
         opacity: 0.35;
         transform: scale(0.8);
     }
+
     to {
         opacity: 1;
         transform: scale(1.2);
@@ -1910,6 +1988,7 @@ body.halloween-theme #halloween-decor {
 
 /* Respecte les préférences de mouvement */
 @media (prefers-reduced-motion: reduce) {
+
     .halloween-pumpkin,
     .halloween-bat,
     .halloween-ghost,
@@ -1934,7 +2013,7 @@ body.halloween-theme #halloween-decor {
     text-align: left;
     cursor: pointer;
     transition: background 0.2s ease, border-color 0.2s ease,
-                transform 0.2s ease;
+        transform 0.2s ease;
 }
 
 /* Petite bulle au survol */
@@ -1954,4 +2033,186 @@ body.halloween-theme #halloween-decor {
 
 #special-themes-submenu[hidden] {
     display: none;
+}
+
+
+/* Badge ANCIEN à l'extrémité droite de la carte Gianni */
+#experience .gianni-card-header {
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+#experience .experience-old-tag {
+    flex-shrink: 0;
+    margin-left: auto;
+    padding: 5px 9px;
+    border: 1px solid rgba(255, 70, 70, 0.4);
+    border-radius: 6px;
+    background: rgba(255, 50, 50, 0.12);
+    color: #ff4d4d;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    white-space: nowrap;
+}
+
+/* =========================
+   FUTURE EXPERIENCE
+========================= */
+
+#experience .future-status {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    padding: 6px 9px;
+    border: 1px solid rgba(234, 179, 8, 0.4);
+    border-radius: 6px;
+    background: rgba(234, 179, 8, 0.1);
+    color: #eab308;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    white-space: nowrap;
+}
+
+#experience .future-communities {
+    display: grid;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+#experience .future-community {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px;
+    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.025);
+}
+
+#experience .future-community strong {
+    font-size: 14px;
+}
+
+#experience .future-community p {
+    margin: 6px 0 0;
+    color: var(--text-secondary, #aab3c2);
+    font-size: 12px;
+}
+
+#experience .future-question {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    border: 1px solid rgba(234, 179, 8, 0.35);
+    border-radius: 50%;
+    color: #eab308;
+    font-weight: 800;
+}
+
+#experience .future-note {
+    margin: 0;
+    color: var(--text-secondary, #aab3c2);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/* Effet réciproque avec le teaser */
+@media (min-width: 701px) {
+
+    /* Le teaser décale Middle Man */
+    #experience .experience-list:has(> .future-experience-card:hover)>.experience-card:nth-child(3) {
+        transform: translateX(-12px) scale(0.97);
+    }
+
+    /* Le teaser décale ATM & GuiGui */
+    #experience .experience-list:has(> .future-experience-card:hover)>.experience-card:nth-child(1) {
+        transform: translateX(12px) scale(0.97);
+    }
+
+    /* Le teaser décale Gianni */
+    #experience .experience-list:has(> .future-experience-card:hover)>.experience-card:nth-child(2) {
+        transform: translateX(-12px) scale(0.97);
+    }
+
+    /* Les autres cartes décalent le teaser */
+    #experience .experience-list:has(> .experience-card:nth-child(1):hover)>.future-experience-card {
+        transform: translateX(12px) scale(0.97);
+    }
+
+    #experience .experience-list:has(> .experience-card:nth-child(2):hover)>.future-experience-card {
+        transform: translateX(-12px) scale(0.97);
+    }
+
+    #experience .experience-list:has(> .experience-card:nth-child(3):hover)>.future-experience-card {
+        transform: translateX(12px) scale(0.97);
+    }
+
+    .experience-current-tag {
+        color: #70b7ff;
+        background: rgba(59, 130, 246, 0.16);
+        border: 1px solid rgba(59, 130, 246, 0.35);
+        padding: 5px 10px;
+        border-radius: 6px;
+        font-size: 11px;
+        font-weight: 800;
+        white-space: nowrap;
+    }
+}
+
+
+/* Footer : dernière mise à jour du site */
+.footer-update {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0;
+    margin: 0;
+    font-size: 13px;
+    color: var(--text-secondary, #a0a0a0);
+    white-space: nowrap;
+}
+
+.footer-update-dot {
+    width: 7px;
+    height: 7px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #60a5fa;
+    box-shadow: 0 0 8px rgba(96, 165, 250, 0.5);
+}
+
+#last-site-update {
+    color: var(--text-color, inherit);
+    font-weight: 600;
+}
+
+/* Alignement du copyright et de la date */
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* Adaptation aux téléphones */
+@media (max-width: 600px) {
+    .footer-bottom {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .footer-update {
+        white-space: normal;
+        flex-wrap: wrap;
+        font-size: 12px;
+    }
 }
