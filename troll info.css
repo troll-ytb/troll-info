@@ -1781,139 +1781,151 @@ body::after {
 }
 
 /* =========================
-
-   PIED DE PAGE
-
+   PIED DE PAGE — STYLE V4
+   Avec une colonne LÉGAL en plus
 ========================= */
 
 .footer {
-
     width: 100%;
-
     padding: 55px 40px 22px;
-
     border-top: 1px solid rgba(var(--theme-accent-rgb), 0.2);
-
     background: rgba(0, 0, 0, 0.42);
-
 }
 
 .footer-content {
-
     width: 100%;
-
     max-width: 1200px;
-
     margin: 0 auto;
 
     display: grid;
 
-    grid-template-columns: 2fr 1fr 1fr;
+    /* Logo à gauche + 3 colonnes */
+    grid-template-columns: 2fr 1fr 1fr 1fr;
 
-    gap: 60px;
-
+    gap: 40px;
+    align-items: start;
 }
 
 .footer-brand {
-
     max-width: 330px;
-
 }
 
 .footer-logo {
-
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
     margin-bottom: 14px;
-
     font-size: 20px;
-
 }
 
 .footer-logo img {
-
     width: 38px;
-
     height: 38px;
-
     object-fit: contain;
-
 }
 
 .footer-brand p {
-
     color: #8792a5;
-
     font-size: 13px;
-
     line-height: 1.8;
-
 }
 
 .footer-column {
-
     display: flex;
-
     flex-direction: column;
-
     align-items: flex-start;
-
     gap: 13px;
-
+    min-width: 0;
 }
 
 .footer-column h3 {
-
-    margin-bottom: 5px;
-
+    margin: 0 0 5px;
     color: var(--theme-accent);
-
     font-size: 12px;
-
     letter-spacing: 2px;
-
 }
 
 .footer-column a {
-
     color: #a5afbf;
-
     text-decoration: none;
-
     font-size: 13px;
-
     transition: color 0.2s ease, transform 0.2s ease;
-
 }
 
 .footer-column a:hover {
-
     color: var(--theme-accent);
-
     transform: translateX(3px);
-
 }
 
+/* Ligne inférieure */
 .footer-bottom {
-
     width: 100%;
-
     max-width: 1200px;
-
     margin: 40px auto 0;
-
     padding-top: 18px;
 
-    display: flex;
-
-    justify-content: space-between;
-
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
     gap: 15px;
 
     border-top: 1px solid rgba(255, 255, 255, 0.07);
-
     color: #667287;
-
     font-size: 11px;
+}
 
+.footer-bottom> :first-child {
+    text-align: left;
+}
+
+.footer-update {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    text-align: center;
+}
+
+.footer-bottom> :last-child {
+    text-align: right;
+}
+
+/* Adaptation tablette et mobile */
+@media (max-width: 900px) {
+    .footer-content {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 35px;
+    }
+
+    .footer-brand {
+        max-width: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer {
+        padding: 42px 24px 20px;
+    }
+
+    .footer-content {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+    }
+
+    .footer-bottom {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .footer-bottom> :first-child,
+    .footer-bottom> :last-child {
+        text-align: center;
+    }
+
+    .footer-update {
+        flex-wrap: wrap;
+    }
 }
 
 /* =========================
@@ -3991,33 +4003,115 @@ body.halloween-theme #halloween-decor {
 /* =========================================
    À PROPOS — VERSION V4
    ========================================= */
-.about-v4 { display: grid; gap: 18px; }
-.about-v4-intro, .about-v4-mini, .about-v4-goal, .about-v4-quote {
+.about-v4 {
+    display: grid;
+    gap: 18px;
+}
+
+.about-v4-intro,
+.about-v4-mini,
+.about-v4-goal,
+.about-v4-quote {
     border: 1px solid rgba(var(--theme-accent-rgb), .24);
     background: rgba(5, 10, 20, .68);
     border-radius: 18px;
 }
-.about-v4-intro { display: flex; align-items: flex-start; gap: 20px; padding: 27px; }
-.about-v4-icon { display: grid; place-items: center; flex: 0 0 55px; width: 55px; height: 55px;
-    border-radius: 14px; background: rgba(var(--theme-accent-rgb), .13);
-    border: 1px solid rgba(var(--theme-accent-rgb), .35); color: var(--theme-accent); font-weight: 900; }
-.about-v4 h3 { color: #f5f7fc; font-size: 19px; margin: 0 0 10px; }
-.about-v4 p { color: #aab6c9; font-size: 14px; line-height: 1.75; }
-.about-v4-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
-.about-v4-mini { text-align: center; padding: 25px 18px; transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
-.about-v4-mini-icon { display: block; font-size: 27px; margin-bottom: 13px; }
-.about-v4-mini h3 { font-size: 16px; }
-.about-v4-mini:hover { transform: translateY(-5px); border-color: var(--theme-accent);
-    box-shadow: 0 12px 30px rgba(var(--theme-accent-rgb), .12); }
-.about-v4-goal { padding: 23px 26px; background: rgba(var(--theme-accent-rgb), .055); }
-.about-v4-quote { margin: 0; padding: 23px 26px; border-left: 3px solid var(--theme-accent);
-    color: #e5ecf7; font-size: 15px; font-weight: 600; line-height: 1.8; }
-@media (max-width: 700px) {
-    .about-v4-grid { grid-template-columns: 1fr; }
-    .about-v4-intro { flex-direction: column; padding: 22px; }
-    .about-v4-mini { padding: 20px; }
+
+.about-v4-intro {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 27px;
 }
-@media (prefers-reduced-motion: reduce) { .about-v4-mini { transition: none; } }
+
+.about-v4-icon {
+    display: grid;
+    place-items: center;
+    flex: 0 0 55px;
+    width: 55px;
+    height: 55px;
+    border-radius: 14px;
+    background: rgba(var(--theme-accent-rgb), .13);
+    border: 1px solid rgba(var(--theme-accent-rgb), .35);
+    color: var(--theme-accent);
+    font-weight: 900;
+}
+
+.about-v4 h3 {
+    color: #f5f7fc;
+    font-size: 19px;
+    margin: 0 0 10px;
+}
+
+.about-v4 p {
+    color: #aab6c9;
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+.about-v4-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.about-v4-mini {
+    text-align: center;
+    padding: 25px 18px;
+    transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+
+.about-v4-mini-icon {
+    display: block;
+    font-size: 27px;
+    margin-bottom: 13px;
+}
+
+.about-v4-mini h3 {
+    font-size: 16px;
+}
+
+.about-v4-mini:hover {
+    transform: translateY(-5px);
+    border-color: var(--theme-accent);
+    box-shadow: 0 12px 30px rgba(var(--theme-accent-rgb), .12);
+}
+
+.about-v4-goal {
+    padding: 23px 26px;
+    background: rgba(var(--theme-accent-rgb), .055);
+}
+
+.about-v4-quote {
+    margin: 0;
+    padding: 23px 26px;
+    border-left: 3px solid var(--theme-accent);
+    color: #e5ecf7;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.8;
+}
+
+@media (max-width: 700px) {
+    .about-v4-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-v4-intro {
+        flex-direction: column;
+        padding: 22px;
+    }
+
+    .about-v4-mini {
+        padding: 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .about-v4-mini {
+        transition: none;
+    }
+}
 
 /* Barre sous le statut Discord */
 .discord-presence {
@@ -4042,6 +4136,1490 @@ body.halloween-theme #halloween-decor {
 }
 
 /* Réduire l'espace sous le séparateur des compétences */
-.profile-section + .separator {
+.profile-section+.separator {
     margin-bottom: 12px;
+}
+
+/* =========================================
+   SAPPHIRE V5.1 — CARTE VERROUILLÉE
+   Étape 1 : chaînes et cadenas statiques
+========================================= */
+
+#sapphire-collection {
+    background: linear-gradient(135deg, #06142d, #102f58);
+    border-color: #2865ac;
+}
+
+#sapphire-collection .special-badge,
+#sapphire-collection .theme-label {
+    color: #82dfff;
+    border-color: #397fbd;
+}
+
+#sapphire-collection .special-header p {
+    color: #b5d0e8;
+}
+
+#sapphire-theme-card {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, #081a36, #113969);
+    border-color: #3988c8;
+}
+
+#sapphire-theme-card .sapphire-card-content {
+    opacity: .3;
+    filter: blur(4px);
+}
+
+#sapphire-theme-card .sapphire-lock-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    pointer-events: none;
+}
+
+/* Deux chaînes croisées en X */
+
+#sapphire-theme-card .sapphire-chain {
+    position: absolute;
+    left: -20%;
+    top: calc(50% - 13px);
+    width: 140%;
+    height: 26px;
+    border-radius: 14px;
+    border: 2px solid #9beaff;
+    background:
+        repeating-linear-gradient(90deg,
+            #0a3978 0 9px,
+            #5cd5ff 9px 14px,
+            #145aab 14px 23px,
+            #d2faff 23px 27px);
+    box-shadow:
+        0 5px 12px #0009,
+        inset 0 3px 4px #ffffff80,
+        inset 0 -4px 5px #001b4f;
+}
+
+#sapphire-theme-card .sapphire-chain-a {
+    transform: rotate(24deg);
+}
+
+#sapphire-theme-card .sapphire-chain-b {
+    transform: rotate(-24deg);
+}
+
+/* Cadenas central */
+
+#sapphire-theme-card .sapphire-padlock {
+    position: relative;
+    width: 105px;
+    height: 135px;
+    z-index: 3;
+    filter: drop-shadow(0 10px 12px #0009);
+}
+
+#sapphire-theme-card .sapphire-shackle {
+    position: absolute;
+    top: 0;
+    left: 23px;
+    width: 59px;
+    height: 77px;
+    border: 13px solid #8fdfff;
+    border-bottom: 0;
+    border-radius: 35px 35px 0 0;
+    box-shadow: inset 3px 0 4px #125a9d;
+}
+
+#sapphire-theme-card .sapphire-lock-body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 105px;
+    height: 83px;
+    border: 2px solid #9ceaff;
+    border-radius: 13px;
+    background: linear-gradient(120deg,
+            #06418b,
+            #59d4ff 45%,
+            #0751a7 80%,
+            #032b64);
+    box-shadow:
+        inset 0 4px 8px #ffffff55,
+        0 8px 16px #0008;
+}
+
+#sapphire-theme-card .sapphire-keyhole {
+    position: absolute;
+    top: 26px;
+    left: 45px;
+    width: 14px;
+    height: 24px;
+    border-radius: 50% 50% 3px 3px;
+    background: #03172f;
+}
+
+#sapphire-theme-card .sapphire-lock-label {
+    position: absolute;
+    bottom: 15px;
+    padding: 8px 16px;
+    border: 1px solid #60b9f2;
+    border-radius: 30px;
+    background: #061a35e8;
+    color: #e1f6ff;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* Respect du format mobile */
+
+@media (max-width: 600px) {
+    #sapphire-theme-card {
+        min-height: 270px;
+    }
+
+    #sapphire-theme-card .sapphire-chain {
+        width: 160%;
+        left: -30%;
+    }
+}
+
+/* SAPPHIRE — DÉVERROUILLAGE */
+
+#sapphire-theme-card.sapphire-unlocked .sapphire-lock-layer {
+    display: none;
+}
+
+#sapphire-theme-card.sapphire-unlocked .sapphire-card-content {
+    opacity: 1;
+    filter: none;
+}
+
+#sapphire-theme-card.sapphire-unlocked {
+    border-color: #67d9ff;
+    box-shadow: 0 0 25px rgba(48, 166, 255, .2);
+}
+
+/* Bouton secret Sapphire */
+
+#cit-secret-trigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: auto;
+    height: auto;
+    padding: 5px 11px;
+    margin: 0;
+
+    background: rgba(10, 35, 60, 0.55);
+    border: 1px solid rgba(60, 150, 255, 0.45);
+    border-radius: 9px;
+
+    color: #79baff;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.05em;
+
+    cursor: pointer;
+    appearance: none;
+    box-shadow: none;
+}
+
+#cit-secret-trigger:hover {
+    background: rgba(25, 65, 105, 0.65);
+    border-color: #64b5ff;
+}
+
+
+/* =========================================
+   SAPPHIRE V5.1 — RESTAURATION
+========================================= */
+
+.sapphire-overlay[hidden] {
+    display: none !important;
+}
+
+.sapphire-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: rgba(0, 5, 22, .84);
+    backdrop-filter: blur(12px);
+    animation: sapphireAppear .45s ease both;
+}
+
+.sapphire-dialog {
+    position: relative;
+    width: min(100%, 470px);
+    padding: 38px 30px;
+    border: 1px solid #55caff;
+    border-radius: 24px;
+    text-align: center;
+    color: #eef8ff;
+    background: linear-gradient(145deg,
+            #07162f,
+            #102f60 65%,
+            #071b3c);
+    box-shadow:
+        0 0 35px rgba(28, 146, 255, .45),
+        0 0 95px rgba(20, 91, 255, .2),
+        inset 0 0 35px rgba(83, 195, 255, .1);
+    animation: sapphirePopup .65s cubic-bezier(.2, 1.5, .4, 1);
+    overflow: hidden;
+}
+
+.sapphire-dialog::before {
+    content: "";
+    position: absolute;
+    inset: -100%;
+    background: linear-gradient(110deg,
+            transparent 43%,
+            rgba(255, 255, 255, .13) 50%,
+            transparent 57%);
+    animation: sapphireShimmer 5s linear infinite;
+    pointer-events: none;
+}
+
+.sapphire-close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    border: 0;
+    background: transparent;
+    color: #dceeff;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.sapphire-shine {
+    font-size: 24px;
+    letter-spacing: 8px;
+    margin-bottom: 15px;
+    animation: sapphireFloat 3s ease-in-out infinite;
+}
+
+.sapphire-img {
+    display: block;
+    width: 130px;
+    height: 130px;
+    object-fit: contain;
+    margin: 0 auto 18px;
+    filter: drop-shadow(0 0 20px #35baff);
+    animation: sapphireFloat 3s ease-in-out infinite;
+}
+
+.sapphire-dialog h2 {
+    margin: 12px 0;
+    color: #b7eaff;
+    font-size: clamp(24px, 5vw, 32px);
+    text-shadow: 0 0 20px #218fff;
+}
+
+.sapphire-dialog p {
+    color: #d5e7ff;
+    line-height: 1.6;
+}
+
+.sapphire-activate {
+    margin-top: 18px;
+    padding: 14px 25px;
+    border: 1px solid #8feaff;
+    border-radius: 12px;
+    color: white;
+    background: linear-gradient(120deg, #1465d8, #13b8f3);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 0 22px rgba(22, 172, 255, .4);
+    transition: transform .2s, box-shadow .2s;
+}
+
+.sapphire-activate:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 35px rgba(35, 188, 255, .7);
+}
+
+/* Pluie d'émojis Sapphire */
+
+#sapphire-rain {
+    position: fixed;
+    inset: 0;
+    z-index: 100000;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.sapphire-drop {
+    position: absolute;
+    top: -70px;
+    animation: sapphireFall var(--fall-duration, 4s) linear forwards;
+    filter: drop-shadow(0 0 8px #3cbaff);
+}
+
+/* Clé volante */
+
+#sapphire-theme-card {
+    position: relative;
+}
+
+.sapphire-flying-key {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 50;
+    font-size: 65px;
+    line-height: 1;
+    pointer-events: none;
+    filter: drop-shadow(0 0 15px #ffe58a);
+    animation: sapphireKey 2.4s ease-in-out forwards;
+}
+
+/* Ouverture du cadenas */
+
+#sapphire-theme-card.sapphire-opening .sapphire-shackle {
+    animation: sapphireShackleOpen .7s ease forwards;
+    animation-delay: 1.9s;
+    transform-origin: right bottom;
+}
+
+#sapphire-theme-card.sapphire-unlocked .sapphire-lock-layer {
+    display: none !important;
+}
+
+#sapphire-theme-card.sapphire-unlocked .sapphire-card-content {
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+#sapphire-theme-card.sapphire-unlocked {
+    border-color: #6cdbff;
+    box-shadow: 0 0 30px rgba(36, 165, 255, .25);
+}
+
+/* Thème Sapphire sur le site */
+
+body.sapphire-theme {
+    --sapphire-primary: #45baff;
+    --sapphire-light: #9be7ff;
+    --sapphire-dark: #07152e;
+    background:
+        radial-gradient(ellipse at 50% 0%,
+            rgba(13, 83, 178, .35), transparent 65%),
+        linear-gradient(180deg, #030c1c, #07152e 55%, #020918) !important;
+    color: #eaf5ff;
+}
+
+body.sapphire-theme .special-themes,
+body.sapphire-theme .experience-card,
+body.sapphire-theme .theme-card {
+    border-color: rgba(79, 186, 255, .6);
+    box-shadow: 0 0 22px rgba(36, 130, 255, .12);
+}
+
+body.sapphire-theme #sapphire-collection {
+    border-color: #48c6ff;
+    box-shadow: 0 0 45px rgba(23, 124, 255, .25);
+}
+
+/* Décorations lumineuses du thème */
+
+#sapphire-ambient {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.sapphire-spark {
+    position: absolute;
+    color: #7fdcff;
+    opacity: .5;
+    animation: sapphireFloat 4s ease-in-out infinite;
+    text-shadow: 0 0 15px #3abaff;
+}
+
+/* Animations */
+
+@keyframes sapphireAppear {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes sapphirePopup {
+    from {
+        opacity: 0;
+        transform: scale(.7) translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes sapphireFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes sapphireShimmer {
+    from {
+        transform: translateX(-50%);
+    }
+
+    to {
+        transform: translateX(50%);
+    }
+}
+
+@keyframes sapphireFall {
+    from {
+        transform: translateY(-50px) rotate(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(115vh) rotate(540deg);
+        opacity: 0;
+    }
+}
+
+@keyframes sapphireKey {
+    0% {
+        transform: translate(-220px, -170px) rotate(-55deg) scale(.5);
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    75% {
+        transform: translate(-50%, -50%) rotate(-35deg) scale(1);
+        opacity: 1;
+    }
+
+    90% {
+        transform: translate(-50%, -50%) rotate(35deg) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(35deg) scale(.6);
+        opacity: 0;
+    }
+}
+
+@keyframes sapphireShackleOpen {
+    to {
+        transform: translateY(-12px) rotate(-25deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .sapphire-dialog,
+    .sapphire-img,
+    .sapphire-shine,
+    .sapphire-drop,
+    .sapphire-flying-key,
+    .sapphire-spark {
+        animation-duration: .01ms !important;
+    }
+}
+
+/* Logo Sapphire — taille maîtrisée */
+.sapphire-theme-icon img {
+    display: block;
+    width: 75px;
+    height: 75px;
+    max-width: 75px;
+    object-fit: contain;
+}
+
+/* =========================================
+   SAPPHIRE V5.1 — RESTAURATION VISUELLE
+========================================= */
+
+#sapphire-collection {
+    position: relative;
+    max-width: 1000px;
+    margin: 65px auto;
+    padding: 24px;
+    border: 1px solid #276ab4;
+    border-radius: 17px;
+    background: linear-gradient(145deg, #081a35, #102b52);
+    box-shadow: 0 0 30px rgba(26, 113, 232, .16);
+    text-align: center;
+}
+
+#sapphire-collection .special-header h2 {
+    color: #d8edff;
+}
+
+#sapphire-collection .special-badge {
+    color: #8fcfff;
+}
+
+#sapphire-theme-card {
+    position: relative;
+    margin-top: 20px;
+    overflow: hidden;
+    isolation: isolate;
+    border: 1px solid #387bc6;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #102d57, #0a2143);
+}
+
+
+#sapphire-theme-card .sapphire-card-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 18px;
+}
+
+
+#sapphire-theme-card .sapphire-theme-icon img {
+    display: block;
+    width: 75px;
+    height: 75px;
+    max-width: 75px;
+    object-fit: contain;
+    margin: auto;
+}
+
+#sapphire-theme-card .theme-info h3 {
+    margin: 4px 0;
+    color: #e4f4ff;
+}
+
+#sapphire-theme-card .theme-info p {
+    color: #a7c5e7;
+}
+
+#sapphire-theme-card .theme-label {
+    color: #78c8ff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+#sapphire-theme-card .theme-status {
+    margin: 5px 0 0;
+    color: #8ecbff;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* ========== VERROUILLAGE ========== */
+
+#sapphire-theme-card .sapphire-lock-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    display: block;
+    overflow: hidden;
+    background: rgba(5, 17, 38, .38);
+}
+
+#sapphire-theme-card .sapphire-lock-layer[hidden] {
+    display: none !important;
+}
+
+/* Chaînes métalliques croisées */
+#sapphire-theme-card .sapphire-chain {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 150%;
+    height: 23px;
+    transform-origin: center;
+    border-top: 2px solid #d8e7f5;
+    border-bottom: 2px solid #536f8c;
+    border-radius: 4px;
+
+    background:
+        repeating-linear-gradient(90deg,
+            transparent 0 7px,
+            rgba(6, 27, 55, .85) 7px 10px,
+            transparent 10px 20px),
+        repeating-linear-gradient(115deg,
+            #344e70 0 6px,
+            #b2cce4 7px 12px,
+            #ebf6ff 13px 15px,
+            #4d739c 16px 23px);
+
+    box-shadow:
+        0 4px 8px rgba(0, 0, 0, .65),
+        0 0 8px rgba(64, 153, 255, .25),
+        inset 0 3px 3px rgba(255, 255, 255, .3);
+}
+
+#sapphire-theme-card .sapphire-chain-a {
+    transform: translate(-50%, -50%) rotate(23deg);
+}
+
+#sapphire-theme-card .sapphire-chain-b {
+    transform: translate(-50%, -50%) rotate(-23deg);
+}
+
+/* Cadenas argenté avec reflets bleu saphir */
+#sapphire-theme-card .sapphire-padlock {
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    top: 50%;
+    width: 70px;
+    height: 94px;
+    transform: translate(-50%, -50%);
+    filter: drop-shadow(0 5px 8px rgba(0, 0, 0, .8));
+}
+
+#sapphire-theme-card .sapphire-shackle {
+    position: absolute;
+    top: 0;
+    left: 15px;
+    width: 40px;
+    height: 54px;
+    border: 10px solid #b7d8f0;
+    border-bottom: 0;
+    border-radius: 24px 24px 0 0;
+    background: transparent;
+    box-shadow:
+        inset 2px 0 4px #40628d,
+        2px 0 3px #294e7b;
+    transform-origin: 10px 43px;
+}
+
+#sapphire-theme-card .sapphire-lock-body {
+    position: absolute;
+    bottom: 0;
+    left: 3px;
+    width: 64px;
+    height: 58px;
+    border: 2px solid #d4eafa;
+    border-radius: 9px;
+    background: linear-gradient(125deg,
+            #f4fbff 0%,
+            #a9d2ee 20%,
+            #548ec3 48%,
+            #24609d 75%,
+            #11396f 100%);
+    box-shadow:
+        inset 3px 3px 6px rgba(255, 255, 255, .55),
+        inset -4px -4px 8px rgba(0, 23, 65, .45);
+}
+
+#sapphire-theme-card .sapphire-keyhole {
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    width: 11px;
+    height: 11px;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: #071b36;
+}
+
+#sapphire-theme-card .sapphire-keyhole::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 3px;
+    width: 5px;
+    height: 15px;
+    background: #071b36;
+    border-radius: 2px;
+}
+
+#sapphire-theme-card .sapphire-lock-label {
+    position: absolute;
+    z-index: 11;
+    bottom: 9px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 12px;
+    border: 1px solid #658dbb;
+    border-radius: 20px;
+    background: #0a2344;
+    color: #dceeff;
+    font-size: 10px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+/* ========== CINÉMATIQUE ========== */
+
+
+#sapphire-theme-card .sapphire-flying-key {
+    position: absolute;
+    z-index: 20;
+    left: 50%;
+    top: 50%;
+    font-size: 42px;
+    pointer-events: none;
+    filter: drop-shadow(0 0 12px #5ac4ff);
+    animation: sapphire-key-flight 2.8s ease-in-out forwards;
+}
+
+
+
+
+@keyframes sapphire-key-flight {
+    0% {
+        transform: translate(-50%, -220px) rotate(-40deg);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    65% {
+        transform: translate(-50%, -15px) rotate(0deg);
+        opacity: 1;
+    }
+
+    85% {
+        transform: translate(-50%, -15px) rotate(90deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, -15px) rotate(90deg);
+        opacity: 0;
+    }
+}
+
+
+#sapphire-theme-card.sapphire-opening .sapphire-shackle {
+    animation: sapphire-open-shackle 2.8s ease forwards;
+}
+
+@keyframes sapphire-open-shackle {
+
+    0%,
+    73% {
+        transform: translateY(0) rotate(0);
+    }
+
+    100% {
+        transform: translateY(-15px) rotate(-24deg);
+    }
+}
+
+#sapphire-theme-card.sapphire-opening .sapphire-chain-a {
+    animation: sapphire-break-a 2.8s ease forwards;
+}
+
+#sapphire-theme-card.sapphire-opening .sapphire-chain-b {
+    animation: sapphire-break-b 2.8s ease forwards;
+}
+
+@keyframes sapphire-break-a {
+
+    0%,
+    75% {
+        transform: translate(-50%, -50%) rotate(23deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-125%, 110%) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+@keyframes sapphire-break-b {
+
+    0%,
+    75% {
+        transform: translate(-50%, -50%) rotate(-23deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(25%, -200%) rotate(-45deg);
+        opacity: 0;
+    }
+}
+
+#sapphire-theme-card.sapphire-unlocked {
+    border-color: #4baeff;
+    box-shadow: 0 0 20px rgba(43, 153, 255, .25);
+}
+
+/* ========== POPUP ========== */
+
+#sapphire-secret.sapphire-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(1, 9, 28, .83);
+    backdrop-filter: blur(7px);
+}
+
+#sapphire-secret[hidden] {
+    display: none !important;
+}
+
+#sapphire-secret .sapphire-dialog {
+    position: relative;
+    width: min(100%, 390px);
+    padding: 32px 24px;
+    border: 1px solid #5ac1ff;
+    border-radius: 17px;
+    background: linear-gradient(180deg,
+            #123f76 0%,
+            #0b2b55 42%,
+            #06152f 100%);
+    color: #e8f6ff;
+    text-align: center;
+    box-shadow:
+        0 0 30px rgba(25, 154, 255, .55),
+        0 0 75px rgba(16, 88, 205, .25);
+    animation: sapphire-popup-in .5s ease both;
+}
+
+@keyframes sapphire-popup-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+#sapphire-secret .sapphire-popup-logo {
+    display: block;
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+    margin: 0 auto 12px;
+    filter: drop-shadow(0 0 18px #39aaff);
+    animation: sapphire-logo-float 3s ease-in-out infinite;
+}
+
+@keyframes sapphire-logo-float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+#sapphire-secret h2 {
+    margin: 8px 0;
+    color: #e8f7ff;
+    font-size: 23px;
+}
+
+#sapphire-secret p {
+    color: #b4d7f5;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+#sapphire-secret .sapphire-close {
+    position: absolute;
+    right: 12px;
+    top: 10px;
+    border: 0;
+    background: transparent;
+    color: #cdeaff;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+#sapphire-secret .sapphire-activate {
+    margin-top: 15px;
+    padding: 11px 20px;
+    border: 1px solid #8bdcff;
+    border-radius: 9px;
+    background: linear-gradient(90deg, #2376d4, #35b7f7);
+    color: white;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 0 17px rgba(50, 175, 255, .4);
+}
+
+/* ========== DIAMANTS ET ÉTOILES ========== */
+
+#sapphire-rain,
+#sapphire-ambient {
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+#sapphire-rain {
+    z-index: 10000;
+}
+
+#sapphire-ambient {
+    z-index: 0;
+}
+
+.sapphire-drop {
+    position: absolute;
+    top: -60px;
+    animation: sapphire-fall var(--duration, 5s) linear forwards;
+}
+
+@keyframes sapphire-fall {
+    from {
+        transform: translateY(-50px) rotate(0);
+        opacity: 0;
+    }
+
+    12% {
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(110vh) rotate(260deg);
+        opacity: 0;
+    }
+}
+
+.sapphire-spark {
+    position: absolute;
+    animation: sapphire-twinkle 4s ease-in-out infinite;
+}
+
+@keyframes sapphire-twinkle {
+
+    0%,
+    100% {
+        opacity: .15;
+        transform: scale(.7);
+    }
+
+    50% {
+        opacity: .8;
+        transform: scale(1.2);
+    }
+}
+
+/* Thème Sapphire actif */
+body.sapphire-theme {
+    background:
+        radial-gradient(ellipse at 50% 10%, #123d78, transparent 65%),
+        linear-gradient(160deg, #061328, #071e40 60%, #040d20);
+    background-attachment: fixed;
+}
+
+body.sapphire-theme .theme-card {
+    border-color: rgba(65, 156, 255, .5);
+}
+
+@media (max-width: 600px) {
+    #sapphire-collection {
+        margin: 35px 12px;
+        padding: 15px;
+    }
+
+    #sapphire-theme-card .sapphire-chain {
+        width: 200%;
+    }
+}
+
+/* SAPPHIRE V5.1 — THÈME BLEU COMPLET */
+
+body.sapphire-theme {
+    --theme-accent: #5dd7ff;
+    --theme-accent-rgb: 93, 215, 255;
+    --theme-glow: rgba(12, 95, 220, .48);
+
+    background: #020d25;
+    color: #e5f5ff;
+}
+
+body.sapphire-theme::before {
+    background:
+        radial-gradient(circle at 15% 20%, #137ce04d, transparent 35%),
+        radial-gradient(circle at 85% 65%, #36c9ff36, transparent 36%),
+        #020d25;
+}
+
+body.sapphire-theme .header,
+body.sapphire-theme .footer {
+    border-color: #4cc9ff77;
+    box-shadow: 0 0 30px #258cff15;
+}
+
+body.sapphire-theme .profile-card,
+body.sapphire-theme .project-card,
+body.sapphire-theme .skill-card,
+body.sapphire-theme #experience .experience-card,
+body.sapphire-theme .social-card,
+body.sapphire-theme .about-card {
+    border-color: #39aaff66;
+    box-shadow: 0 0 22px #259bff18;
+}
+
+body.sapphire-theme .special-themes {
+    border-color: #55cfff;
+}
+
+body.sapphire-theme .eyebrow,
+body.sapphire-theme .experience-stat strong {
+    color: #72dfff;
+}
+
+#sapphire-collection .sapphire-theme-button {
+    margin-top: 18px;
+    background: linear-gradient(110deg, #1672e9, #43caff);
+    color: white;
+    border: 1px solid #89e7ff;
+    box-shadow: 0 0 18px #168cff44;
+}
+
+#sapphire-collection .sapphire-theme-button[hidden] {
+    display: none;
+}
+
+/* Décorations Sapphire permanentes */
+#sapphire-ambient {
+    position: fixed;
+    inset: 0;
+    z-index: 8;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+#sapphire-ambient .sapphire-permanent-drop {
+    position: absolute;
+    top: -80px;
+    display: block;
+    filter: drop-shadow(0 0 9px #54cbff);
+    animation: sapphire-permanent-fall linear forwards;
+}
+
+@keyframes sapphire-permanent-fall {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 0;
+    }
+
+    12%,
+    88% {
+        opacity: .85;
+    }
+
+    100% {
+        transform: translateY(125vh) rotate(320deg);
+        opacity: 0;
+    }
+}
+
+/* Correction de l'espace sous "Thème Sapphire débloqué" */
+
+#sapphire-theme-card.sapphire-unlocked {
+    display: block;
+    min-height: 0;
+    height: auto;
+    padding: 18px 24px;
+}
+
+#sapphire-theme-card.sapphire-unlocked .sapphire-card-content {
+    min-height: 0;
+    height: auto;
+    padding: 0;
+    justify-content: flex-start;
+}
+
+#sapphire-theme-card.sapphire-unlocked .theme-status {
+    margin: 8px 0 0;
+}
+
+/* Petites décorations Sapphire dans la fenêtre */
+#sapphire-secret .sapphire-popup-sparkles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    filter: drop-shadow(0 0 6px #45baff);
+}
+
+#sapphire-secret .sapphire-popup-sparkles span {
+    display: inline-block;
+    animation: sapphire-popup-sparkle 2.8s ease-in-out infinite alternate;
+}
+
+#sapphire-secret .sapphire-popup-sparkles span:nth-child(even) {
+    animation-delay: -1.4s;
+}
+
+@keyframes sapphire-popup-sparkle {
+    from {
+        opacity: 0.5;
+        transform: translateY(3px) scale(0.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(-3px) scale(1.1);
+    }
+}
+
+/* =========================================
+   BOUTONS INDÉPENDANTS DES THÈMES
+========================================= */
+
+/* Menu des thèmes spéciaux */
+body.halloween-theme .special-themes-menu-item,
+body.halloween-theme .special-theme-link {
+    background: #080d19 !important;
+    color: #f5f7fc !important;
+    border-color: rgba(100, 150, 220, 0.25) !important;
+}
+
+/* Bouton de la collection Sapphire */
+body.halloween-theme #toggle-sapphire-theme {
+    background: linear-gradient(90deg, #2376d4, #35b7f7) !important;
+    border-color: #8bdcff !important;
+    color: white !important;
+}
+
+/* Bouton de la fenêtre Sapphire */
+body.halloween-theme #sapphire-activate {
+    background: linear-gradient(90deg, #2376d4, #35b7f7) !important;
+    border-color: #8bdcff !important;
+    color: white !important;
+}
+
+/* Sapphire garde son fond bleu, même sous Halloween */
+body.halloween-theme #sapphire-theme-card {
+    background: linear-gradient(135deg,
+            #081a36,
+            #113969) !important;
+
+    border-color: #3988c8 !important;
+}
+
+/* Halloween garde sa bordure bleue */
+body.sapphire-theme .halloween-card {
+    border: 1px solid #387bc6 !important;
+}
+
+/* Halloween conserve ses bordures d'origine sous Sapphire */
+
+/* Grande section Halloween */
+body.sapphire-theme .special-themes:not(#sapphire-collection) {
+    border-color: #653b80 !important;
+}
+
+/* Carte Halloween intérieure */
+body.sapphire-theme .special-themes:not(#sapphire-collection) .theme-card {
+    border-color: #70428c !important;
+}
+
+/* =========================================
+   SAPPHIRE V5.1 — CADENAS BLEU D'ORIGINE
+========================================= */
+
+/* Chaînes bleues */
+#sapphire-theme-card .sapphire-chain {
+    height: 26px;
+    border: 2px solid #9beaff;
+    border-radius: 14px;
+    background: repeating-linear-gradient(90deg,
+            #0a3978 0 9px,
+            #5cd5ff 9px 14px,
+            #145aab 14px 23px,
+            #d2faff 23px 27px);
+    box-shadow:
+        0 5px 12px #0009,
+        inset 0 3px 4px #ffffff80,
+        inset 0 -4px 5px #001b4f;
+}
+
+/* Grand cadenas central */
+#sapphire-theme-card .sapphire-padlock {
+    width: 105px;
+    height: 135px;
+    filter: drop-shadow(0 10px 12px #0009);
+}
+
+/* Anse lumineuse */
+#sapphire-theme-card .sapphire-shackle {
+    top: 0;
+    left: 23px;
+    width: 59px;
+    height: 77px;
+    border: 13px solid #8fdfff;
+    border-bottom: 0;
+    border-radius: 35px 35px 0 0;
+    box-shadow: inset 3px 0 4px #125a9d;
+    transform-origin: right bottom;
+}
+
+/* Corps bleu saphir */
+#sapphire-theme-card .sapphire-lock-body {
+    bottom: 0;
+    left: 0;
+    width: 105px;
+    height: 83px;
+    border: 2px solid #9ceaff;
+    border-radius: 13px;
+    background: linear-gradient(120deg,
+            #06418b,
+            #59d4ff 45%,
+            #0751a7 80%,
+            #032b64);
+    box-shadow:
+        inset 0 4px 8px #ffffff55,
+        0 8px 16px #0008;
+}
+
+/* Trou de serrure */
+#sapphire-theme-card .sapphire-keyhole {
+    top: 26px;
+    left: 45px;
+    width: 14px;
+    height: 24px;
+    transform: none;
+    border-radius: 50% 50% 3px 3px;
+    background: #03172f;
+}
+
+/* Supprime la rallonge du trou de serrure */
+#sapphire-theme-card .sapphire-keyhole::after {
+    content: none;
+}
+
+/* =========================================
+   SAPPHIRE — CHAÎNES MÉTALLIQUES ENTRELACÉES
+========================================= */
+
+#sapphire-theme-card .sapphire-chain {
+    height: 36px;
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='36' viewBox='0 0 48 36'%3E%3Cdefs%3E%3ClinearGradient id='m' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%23e8faff'/%3E%3Cstop offset='.28' stop-color='%2376d9ff'/%3E%3Cstop offset='.55' stop-color='%232d85c9'/%3E%3Cstop offset='.8' stop-color='%230a376f'/%3E%3Cstop offset='1' stop-color='%239ceaff'/%3E%3C/linearGradient%3E%3Cfilter id='s'%3E%3CfeDropShadow dx='1' dy='2' stdDeviation='1' flood-color='%23001638' flood-opacity='.8'/%3E%3C/filter%3E%3C/defs%3E%3Cg fill='none' stroke='url(%23m)' stroke-width='5' filter='url(%23s)'%3E%3Crect x='1' y='8' width='27' height='20' rx='10' transform='rotate(-22 14.5 18)'/%3E%3Crect x='21' y='8' width='27' height='20' rx='10' transform='rotate(22 34.5 18)'/%3E%3C/g%3E%3Cpath d='M22 10 L27 13' stroke='%230a376f' stroke-width='6'/%3E%3Cpath d='M22 10 L27 13' stroke='%23b9efff' stroke-width='2.5'/%3E%3Cpath d='M22 26 L27 23' stroke='%230a376f' stroke-width='5'/%3E%3C/svg%3E");
+
+    background-repeat: repeat-x;
+    background-size: 48px 36px;
+
+    box-shadow: none;
+    filter: drop-shadow(0 3px 3px rgba(0, 0, 0, .7));
+}
+
+/* ===== CORRECTION MOBILE — COMPÉTENCES ===== */
+@media screen and (max-width: 600px) {
+    #skills .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    #skills .skill-card {
+        min-width: 0;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 20px 14px;
+        overflow-wrap: anywhere;
+    }
+
+    #skills .skill-card h3 {
+        font-size: 20px;
+        line-height: 1.3;
+        overflow-wrap: anywhere;
+    }
+
+    #skills .skill-card p {
+        font-size: 15px;
+        line-height: 1.7;
+        overflow-wrap: anywhere;
+    }
+}
+
+.site-footer {
+    margin-top: 60px;
+    padding: 40px 5% 20px;
+    background: #0b0d12;
+    color: #f1f3f8;
+    border-top: 1px solid #292f3d;
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 35px;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding-bottom: 30px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.footer-logo img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.footer-brand p {
+    max-width: 280px;
+    color: #a9b0c0;
+    line-height: 1.7;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.footer-column h3 {
+    margin: 0 0 8px;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-column a {
+    color: #a9b0c0;
+    text-decoration: none;
+    line-height: 1.6;
+    transition: color 0.2s ease;
+    overflow-wrap: anywhere;
+}
+
+.footer-column a:hover {
+    color: #a99cff;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 22px;
+    padding-top: 20px;
+    border-top: 1px solid #292f3d;
+    color: #7f8798;
+    font-size: 0.88rem;
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+/* Tablettes */
+@media (max-width: 850px) {
+    .footer-main {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px;
+    }
+}
+
+/* Mobiles */
+@media (max-width: 480px) {
+    .site-footer {
+        padding: 30px 20px 18px;
+    }
+
+    .footer-main {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 28px 18px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+    gap: 35px;
+    align-items: start;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.footer-bottom>span:first-child {
+    text-align: left;
+}
+
+.footer-bottom .footer-update {
+    justify-content: center;
+}
+
+.footer-bottom>span:last-child {
+    text-align: right;
 }
