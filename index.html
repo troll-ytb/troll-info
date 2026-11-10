@@ -949,71 +949,128 @@
         </section>
 
     </main>
-    
 
-<!-- PIED DE PAGE -->
-<footer class="footer">
-    <div class="footer-content">
 
-        <!-- LOGO -->
-        <div class="footer-brand">
-            <a href="#accueil" class="footer-logo">
-                <img src="logo.png" alt="Logo Troll Info">
-                <span>Troll Info</span>
-            </a>
+    <!-- PIED DE PAGE -->
+    <footer class="footer">
+        <div class="footer-content">
 
-            <p>
-                Mes projets, mes plateformes et mon univers
-                <br>
-                réunis au même endroit.
+            <!-- LOGO -->
+            <div class="footer-brand">
+                <a href="#accueil" class="footer-logo">
+                    <img src="logo.png" alt="Logo Troll Info">
+                    <span>Troll Info</span>
+                </a>
+
+                <p>
+                    Mes projets, mes plateformes et mon univers
+                    <br>
+                    réunis au même endroit.
+                </p>
+            </div>
+
+            <!-- NAVIGATION -->
+            <div class="footer-column">
+                <h3>NAVIGATION</h3>
+                <a href="#accueil">Accueil</a>
+                <a href="#apropos">À propos</a>
+                <a href="#competences">Compétences</a>
+                <a href="#projets">Mes projets</a>
+                <a href="#experience">Mon expérience</a>
+                <a href="#reseaux">Mes réseaux</a>
+            </div>
+
+            <!-- PLATEFORMES -->
+            <div class="footer-column">
+                <h3>PLATEFORMES</h3>
+                <a href="https://discord.gg/zWqJgQaBWk" target="_blank" rel="noopener noreferrer">Discord</a>
+                <a href="https://www.youtube.com/@Troll_MultiGaming" target="_blank"
+                    rel="noopener noreferrer">YouTube</a>
+                <a href="https://www.twitch.tv/troll_gamingyt" target="_blank" rel="noopener noreferrer">Twitch</a>
+                <a href="https://www.roblox.com/share/g/698338488" target="_blank" rel="noopener noreferrer">Roblox</a>
+                <a href="https://www.tiktok.com/@troll_multigaming_yt" target="_blank"
+                    rel="noopener noreferrer">TikTok</a>
+                <a href="https://link.brawlstars.com/invite/band/fr?tag=880GG9PYR&amp;token=448xt3t7" target="_blank"
+                    rel="noopener noreferrer">Brawl Stars</a>
+            </div>
+
+            <!-- LÉGAL -->
+            <div class="footer-column">
+                <h3>LÉGAL</h3>
+                <a href="mentions-legales.html">Mentions légales</a>
+                <a href="confidentialite.html">Politique de confidentialité</a>
+                <a href="cgu.html">Conditions générales d'utilisation</a>
+            </div>
+
+        </div>
+
+        <!-- BAS DU PIED DE PAGE -->
+        <div class="footer-bottom">
+            <span>© 2026 Troll Info</span>
+
+            <div class="footer-update">
+                <span class="footer-update-dot"></span>
+                <span>Dernière mise à jour :</span>
+                <time id="last-site-update">Chargement...</time>
+            </div>
+
+            <span>Tous droits réservés.</span>
+        </div>
+    </footer>
+
+
+    <!-- =========================================
+     TROLL INFO V6 — LECTEUR MUSICAL FLOTTANT
+========================================= -->
+    <div class="music-player" id="music-player">
+        <section class="music-panel" id="music-panel" aria-label="Lecteur musical" hidden>
+            <div class="music-panel-header">
+                <div>
+                    <p class="music-eyebrow">TROLL INFO</p>
+                    <h2>🎵 Lecteur musical</h2>
+                </div>
+                <button class="music-close" id="music-close" type="button" aria-label="Fermer le lecteur">×</button>
+            </div>
+
+            <label class="music-field">
+                <span>Style musical</span>
+                <select id="music-category">
+                    <option value="phonk">🔥 Phonk</option>
+                    <option value="chill">🌙 Chill</option>
+                    <option value="cyberpunk">🌆 Cyberpunk</option>
+                </select>
+            </label>
+
+            <label class="music-field">
+                <span>Musique</span>
+                <select id="music-track"></select>
+            </label>
+
+            <p class="music-now-playing" id="music-now-playing" aria-live="polite">Choisis une musique pour commencer.
             </p>
-        </div>
 
-        <!-- NAVIGATION -->
-        <div class="footer-column">
-            <h3>NAVIGATION</h3>
-            <a href="#accueil">Accueil</a>
-            <a href="#apropos">À propos</a>
-            <a href="#competences">Compétences</a>
-            <a href="#projets">Mes projets</a>
-            <a href="#experience">Mon expérience</a>
-            <a href="#reseaux">Mes réseaux</a>
-        </div>
+            <div class="music-controls">
+                <button id="music-play" class="music-action music-play" type="button">▶ Lecture</button>
+                <button id="music-next" class="music-action" type="button" aria-label="Musique suivante">⏭
+                    Suivante</button>
+            </div>
+            <button id="music-loop" class="music-action music-loop-button" type="button" aria-pressed="false">🔁 Boucle
+                : désactivée</button>
 
-        <!-- PLATEFORMES -->
-        <div class="footer-column">
-            <h3>PLATEFORMES</h3>
-            <a href="https://discord.gg/zWqJgQaBWk" target="_blank" rel="noopener noreferrer">Discord</a>
-            <a href="https://www.youtube.com/@Troll_MultiGaming" target="_blank" rel="noopener noreferrer">YouTube</a>
-            <a href="https://www.twitch.tv/troll_gamingyt" target="_blank" rel="noopener noreferrer">Twitch</a>
-            <a href="https://www.roblox.com/share/g/698338488" target="_blank" rel="noopener noreferrer">Roblox</a>
-            <a href="https://www.tiktok.com/@troll_multigaming_yt" target="_blank" rel="noopener noreferrer">TikTok</a>
-            <a href="https://link.brawlstars.com/invite/band/fr?tag=880GG9PYR&amp;token=448xt3t7" target="_blank" rel="noopener noreferrer">Brawl Stars</a>
-        </div>
+            <label class="music-volume">
+                <span>🔉 Volume <strong id="music-volume-value">50 %</strong></span>
+                <input id="music-volume" type="range" min="0" max="100" value="50">
+            </label>
 
-        <!-- LÉGAL -->
-        <div class="footer-column">
-            <h3>LÉGAL</h3>
-            <a href="mentions-legales.html">Mentions légales</a>
-            <a href="confidentialite.html">Politique de confidentialité</a>
-            <a href="cgu.html">Conditions générales d'utilisation</a>
-        </div>
+            <p class="music-note">La musique démarre uniquement lorsque tu appuies sur Lecture.</p>
+            <audio id="music-audio" preload="none"></audio>
+        </section>
 
+        <button class="music-floating-button" id="music-toggle" type="button" aria-label="Ouvrir le lecteur musical"
+            aria-expanded="false" aria-controls="music-panel">
+            🔊
+        </button>
     </div>
-
-    <!-- BAS DU PIED DE PAGE -->
-    <div class="footer-bottom">
-        <span>© 2026 Troll Info</span>
-
-        <div class="footer-update">
-            <span class="footer-update-dot"></span>
-            <span>Dernière mise à jour :</span>
-            <time id="last-site-update">Chargement...</time>
-        </div>
-
-        <span>Tous droits réservés.</span>
-    </div>
-</footer>
 
 
     <!-- =========================================
@@ -1164,13 +1221,15 @@
         })();
 
 
+
         /* =========================================
-           4. HALLOWEEN
+           4. HALLOWEEN — RÉCOMPENSE ARCHIVÉE
         ========================================= */
         (() => {
             const button = document.getElementById("claim-halloween");
             const status = document.getElementById("halloween-status");
-
+            const cardSection = document.getElementById("themes-speciaux");
+            const menuLink = document.getElementById("halloween-menu-link");
             const specialToggle = document.getElementById("special-themes-toggle");
             const specialSubmenu = document.getElementById("special-themes-submenu");
 
@@ -1201,13 +1260,18 @@
 
             if (!button || !status) return;
 
-            let unlocked = read(unlockKey);
+            // Halloween est définitivement fermé aux nouvelles réclamations.
+            // Les anciens propriétaires conservent leur récompense.
+            const unlocked = read(unlockKey);
             let active = unlocked && read(themeKey);
 
-            if (!unlocked) save(themeKey, false);
+            if (cardSection) cardSection.hidden = !unlocked;
+            if (menuLink) menuLink.hidden = !unlocked;
 
-            // Si Sapphire est actif, Halloween ne peut pas
-            // être actif en même temps.
+            if (!unlocked) {
+                save(themeKey, false);
+            }
+
             if (read("troll-info-sapphire-active")) {
                 active = false;
                 save(themeKey, false);
@@ -1220,9 +1284,11 @@
                 );
 
                 if (!unlocked) {
-                    button.textContent = "🎁 Réclamer ma récompense";
-                    status.textContent = "🔒 Thème verrouillé";
+                    button.hidden = true;
+                    status.textContent =
+                        "🎃 Édition terminée — récompense indisponible";
                 } else {
+                    button.hidden = false;
                     button.textContent = active
                         ? "☀️ Désactiver le thème Halloween"
                         : "🎃 Activer le thème Halloween";
@@ -1234,13 +1300,9 @@
             }
 
             button.addEventListener("click", () => {
-                if (!unlocked) {
-                    unlocked = true;
-                    active = false;
-                    save(unlockKey, true);
-                } else {
-                    active = !active;
-                }
+                if (!unlocked) return;
+
+                active = !active;
 
                 if (active) {
                     window.dispatchEvent(
@@ -1260,6 +1322,7 @@
 
             updateButton();
         })();
+
 
 
         /* =========================================
@@ -1742,6 +1805,199 @@
         })();
 
     </script>
+
+    <!-- TROLL INFO V6 — LOGIQUE DU LECTEUR MUSICAL -->
+    <script>
+        (() => {
+            const panel = document.getElementById("music-panel");
+            const toggle = document.getElementById("music-toggle");
+            const close = document.getElementById("music-close");
+            const categorySelect = document.getElementById("music-category");
+            const trackSelect = document.getElementById("music-track");
+            const playButton = document.getElementById("music-play");
+            const nextButton = document.getElementById("music-next");
+            const loopButton = document.getElementById("music-loop");
+            const volumeSlider = document.getElementById("music-volume");
+            const volumeValue = document.getElementById("music-volume-value");
+            const nowPlaying = document.getElementById("music-now-playing");
+            const audio = document.getElementById("music-audio");
+
+            if (!panel || !toggle || !close || !categorySelect || !trackSelect ||
+                !playButton || !nextButton || !loopButton || !volumeSlider || !volumeValue || !nowPlaying || !audio) return;
+
+            // Les trois musiques sont rangées dans le dossier "musiques".
+            // La musique de Noël reste volontairement hors du lecteur pour une future mise à jour.
+            const musicLibrary = {
+                phonk: [
+                    {title: "Phonk", src: "musiques/phonk.mp3"}
+                ],
+                chill: [
+                    {title: "Chill", src: "musiques/chill.mp3"}
+                ],
+                cyberpunk: [
+                    {title: "Cyberpunk", src: "musiques/cyberpunk.mp3"}
+                ]
+            };
+
+            const STORAGE = {
+                category: "troll-info-music-category",
+                track: "troll-info-music-track",
+                volume: "troll-info-music-volume",
+                loop: "troll-info-music-loop"
+            };
+
+            const readSaved = (key, fallback) => {
+                try {
+                    const value = localStorage.getItem(key);
+                    return value === null ? fallback : value;
+                } catch {
+                    return fallback;
+                }
+            };
+
+            const save = (key, value) => {
+                try {localStorage.setItem(key, String(value));} catch { }
+            };
+
+            let currentTrackIndex = 0;
+
+            function getTracks() {
+                return musicLibrary[categorySelect.value] || [];
+            }
+
+            function updatePlayButton() {
+                playButton.textContent = audio.paused ? "▶ Lecture" : "⏸ Pause";
+            }
+
+            function loadTrack(index, shouldSave = true) {
+                const tracks = getTracks();
+                if (!tracks.length) return;
+
+                currentTrackIndex = (index + tracks.length) % tracks.length;
+                const track = tracks[currentTrackIndex];
+                audio.pause();
+                audio.src = track.src;
+                audio.load();
+                trackSelect.value = String(currentTrackIndex);
+                nowPlaying.textContent = "Sélection : " + track.title;
+                updatePlayButton();
+
+                if (shouldSave) save(STORAGE.track, currentTrackIndex);
+            }
+
+            function fillTrackList(preferredIndex = 0) {
+                const tracks = getTracks();
+                trackSelect.replaceChildren();
+
+                tracks.forEach((track, index) => {
+                    const option = document.createElement("option");
+                    option.value = String(index);
+                    option.textContent = track.title;
+                    trackSelect.appendChild(option);
+                });
+
+                if (tracks.length) {
+                    const index = Math.min(Math.max(Number(preferredIndex) || 0, 0), tracks.length - 1);
+                    loadTrack(index);
+                } else {
+                    nowPlaying.textContent = "Aucune musique dans cette catégorie.";
+                }
+            }
+
+            function openPanel() {
+                panel.hidden = false;
+                toggle.setAttribute("aria-expanded", "true");
+                toggle.setAttribute("aria-label", "Fermer le lecteur musical");
+            }
+
+            function closePanel() {
+                panel.hidden = true;
+                toggle.setAttribute("aria-expanded", "false");
+                toggle.setAttribute("aria-label", "Ouvrir le lecteur musical");
+                toggle.focus();
+            }
+
+            toggle.addEventListener("click", () => {
+                if (panel.hidden) openPanel();
+                else closePanel();
+            });
+            close.addEventListener("click", closePanel);
+
+            const savedCategory = readSaved(STORAGE.category, "phonk");
+            categorySelect.value = musicLibrary[savedCategory] ? savedCategory : "phonk";
+            fillTrackList(readSaved(STORAGE.track, "0"));
+            save(STORAGE.category, categorySelect.value);
+
+            const savedLoop = readSaved(STORAGE.loop, "false") === "true";
+            audio.loop = savedLoop;
+
+            function updateLoopButton() {
+                loopButton.textContent = audio.loop ? "🔁 Boucle : activée" : "🔁 Boucle : désactivée";
+                loopButton.classList.toggle("is-active", audio.loop);
+                loopButton.setAttribute("aria-pressed", String(audio.loop));
+            }
+
+            updateLoopButton();
+
+            loopButton.addEventListener("click", () => {
+                audio.loop = !audio.loop;
+                save(STORAGE.loop, audio.loop);
+                updateLoopButton();
+            });
+
+            const savedVolume = Number(readSaved(STORAGE.volume, "50"));
+            const initialVolume = Number.isFinite(savedVolume) ? Math.min(100, Math.max(0, savedVolume)) : 50;
+            volumeSlider.value = String(initialVolume);
+            audio.volume = initialVolume / 100;
+            volumeValue.textContent = initialVolume + " %";
+
+            categorySelect.addEventListener("change", () => {
+                save(STORAGE.category, categorySelect.value);
+                fillTrackList(0);
+            });
+
+            trackSelect.addEventListener("change", () => {
+                loadTrack(Number(trackSelect.value));
+            });
+
+            playButton.addEventListener("click", async () => {
+                if (!audio.src) return;
+                if (audio.paused) {
+                    try {
+                        await audio.play();
+                        nowPlaying.textContent = "Lecture : " + getTracks()[currentTrackIndex].title;
+                    } catch {
+                        nowPlaying.textContent = "Fichier audio introuvable ou lecture impossible. Vérifie le dossier musiques.";
+                    }
+                } else {
+                    audio.pause();
+                }
+                updatePlayButton();
+            });
+
+            nextButton.addEventListener("click", () => {
+                loadTrack(currentTrackIndex + 1);
+            });
+
+            audio.addEventListener("ended", () => loadTrack(currentTrackIndex + 1));
+            audio.addEventListener("play", updatePlayButton);
+            audio.addEventListener("pause", updatePlayButton);
+
+            volumeSlider.addEventListener("input", () => {
+                const volume = Number(volumeSlider.value);
+                audio.volume = volume / 100;
+                volumeValue.textContent = volume + " %";
+                save(STORAGE.volume, volume);
+            });
+
+            document.addEventListener("keydown", event => {
+                if (event.key === "Escape" && !panel.hidden) closePanel();
+            });
+
+            console.info("🎵 Lecteur musical Troll Info V6 prêt.");
+        })();
+    </script>
+
 </body>
 
 </html>
